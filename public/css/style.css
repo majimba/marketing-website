@@ -72,28 +72,33 @@ header .logo-container:hover {
     outline: none !important;
 }
 
-header .logo-container img {
-    height: 32px;
+header a img {
+    height: 40px; /* h-10 equivalent */
     width: auto;
     display: block;
     border: none !important;
     outline: none !important;
     object-fit: contain;
     max-width: 100%;
-    min-height: 24px;
-    max-height: 40px;
     background: none !important;
 }
 
+/* Responsive logo sizing to match Tailwind classes */
+@media (min-width: 768px) {
+    header a img {
+        height: 48px; /* md:h-12 equivalent */
+    }
+}
+
 /* Fallback for when logo image fails to load */
-header .logo-container img:not([src]), 
-header .logo-container img[src=""],
-header .logo-container img[src*="undefined"] {
+header a img:not([src]), 
+header a img[src=""],
+header a img[src*="undefined"] {
     display: none !important;
 }
 
 /* Ensure logo container maintains proper spacing even without image */
-header .logo-container {
+header a {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -103,7 +108,7 @@ header .logo-container {
     min-height: 32px;
 }
 
-header .logo-container span {
+header a span {
     font-size: 18px;
     font-weight: bold;
     color: #ffc75b;
@@ -128,10 +133,10 @@ header .logo-container span {
 }
 
 /* Additional overrides for logo container */
-body header .logo-container span,
-html header .logo-container span,
-.team-page header .logo-container span,
-#main header .logo-container span {
+body header a span,
+html header a span,
+.team-page header a span,
+#main header a span {
     text-decoration: none !important;
     border: none !important;
     outline: none !important;
@@ -379,10 +384,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .profile-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
     object-position: center center;
+    margin: auto;
+    display: block;
 }
 
 /* Alternative approach using background positioning for better face centering */

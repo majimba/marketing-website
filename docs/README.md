@@ -5,7 +5,7 @@ A modern, single-page marketing website for Luminary Co., a Lusaka-based creativ
 ## 🚀 Quick Start
 
 1. **Clone or download** this repository
-2. **Open** `index.html` in your browser
+2. **Open** `public/index.html` in your browser
 3. **Deploy** to any static hosting provider (Netlify, Vercel, GitHub Pages)
 
 ## 📋 Project Overview
@@ -24,32 +24,36 @@ This website serves as the primary digital storefront for Luminary Co., designed
 
 ## 🏗️ Technical Architecture
 
-### **Current Structure** (Phase 3 - Refactored)
+### **Current Structure** (Phase 4 - Reorganized)
 ```
 luminary_co_website/
-├── index.html          # Clean HTML file with external file references
-├── css/
-│   └── style.css       # All custom styles and animations
-├── js/
-│   └── script.js       # All interactive functionality
-├── assets/
-│   ├── images/         # Photos, backgrounds, portfolio images
-│   ├── icons/          # Service icons and UI elements
-│   ├── logos/          # Brand logos in multiple sizes
-│   └── favicon/        # Website favicon assets
-├── README.md           # Project documentation
-├── DEVELOPMENT_JOURNAL.md # Development progress tracking
-├── DEVELOPMENT_PLAN.md # Development roadmap
-└── GIT_WORKFLOW.md     # Git workflow documentation
+├── public/                    # 🚀 Vercel deployment source
+│   ├── assets/               # All images, logos, favicons
+│   ├── css/                  # Stylesheets (Tailwind + custom)
+│   ├── js/                   # JavaScript files
+│   └── index.html            # Main website file
+├── docs/                     # 📚 All project documentation
+│   ├── README.md             # This file - project overview
+│   ├── DEVELOPMENT_JOURNAL.md # Development progress tracking
+│   ├── DEVELOPMENT_PLAN.md   # Development roadmap
+│   ├── GIT_WORKFLOW.md      # Git workflow documentation
+│   └── OPTIMIZATION_REPORT.md # Performance analysis
+├── package.json              # Dependencies and scripts
+├── tailwind.config.js        # Tailwind configuration
+├── vercel.json               # Vercel deployment config
+├── .gitignore                # Git exclusions (enhanced)
+├── node_modules/             # Installed packages (ignored)
+├── .git/                     # Git repository
+└── .vercel/                  # Vercel project files
 ```
 
 ### **Technology Stack**
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Styling**: Tailwind CSS (via CDN) + Custom CSS
+- **Styling**: Tailwind CSS (local build) + Custom CSS
 - **Design**: Flexbox, CSS Grid, Responsive Design
 - **Hosting**: Vercel (Global CDN)
 - **Version Control**: Git + GitHub with professional workflow
-- **Deployment**: Vercel CI/CD
+- **Deployment**: Vercel CI/CD (static site)
 
 ## 📱 Features
 

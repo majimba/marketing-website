@@ -2,17 +2,13 @@
   "name": "luminary_co_website",
   "version": "1.0.0",
   "description": "A modern, single-page marketing website for Luminary Co., a Lusaka-based creative and media agency. Built with HTML, Tailwind CSS, and vanilla JavaScript for optimal performance and maintainability.",
-  "main": "index.js",
+  "main": "public/index.html",
   "scripts": {
-    "build:css": "tailwindcss -c tailwind.config.js -i ./css/tw.css -o ./css/tailwind.min.css --minify",
-    "build:js": "terser js/script.js -o js/script.min.js --compress --mangle",
-    "build": "npm run build:css && npm run build:js && npm run build:vercel",
-    "build:vercel": "rm -rf public && mkdir public && cp -r assets css js index.html public/",
-    "watch:css": "tailwindcss -c tailwind.config.js -i ./css/tw.css -o ./css/tailwind.min.css --watch",
+    "dev": "echo 'Static site - no build required. Open public/index.html in browser.'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["static-site", "marketing-website", "tailwind-css", "vanilla-javascript"],
+  "author": "Luminary Co.",
   "license": "ISC",
   "devDependencies": {
     "tailwindcss": "^3.4.15",

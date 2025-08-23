@@ -1,5 +1,5 @@
 // Service Worker for Luminary Co. Website
-const CACHE_NAME = 'luminary-co-v1';
+const CACHE_NAME = 'luminary-co-v2';
 const urlsToCache = [
   '/',
   '/css/tailwind.min.css',
@@ -11,6 +11,7 @@ const urlsToCache = [
 
 // Install event - cache resources
 self.addEventListener('install', event => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => cache.addAll(urlsToCache))
@@ -39,6 +40,6 @@ self.addEventListener('activate', event => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
 });

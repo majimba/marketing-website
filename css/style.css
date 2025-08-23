@@ -96,6 +96,15 @@ header, section, footer {
     animation: moveDots 15s linear infinite;
 }
 
+/* Video fallback handling */
+.video-fallback {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.video-fallback.show {
+    opacity: 1;
+}
+
 /* Performance optimizations */
 * {
     box-sizing: border-box;

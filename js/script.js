@@ -53,6 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Performance optimization: Intersection Observer for images
     initializeLazyLoading();
+    
+    // Video fallback handling
+    initializeVideoFallback();
 });
 
 // Testimonial Slider Functionality
@@ -148,4 +151,22 @@ function initializeLazyLoading() {
     images.forEach(img => {
         imageObserver.observe(img);
     });
+}
+
+// Video Fallback Handling
+function initializeVideoFallback() {
+    const video = document.querySelector('#hero video');
+    const fallback = document.querySelector('.video-fallback');
+    
+    if (video && fallback) {
+        video.addEventListener('error', () => {
+            // Show fallback background if video fails to load
+            fallback.classList.add('show');
+        });
+        
+        video.addEventListener('loadstart', () => {
+            // Hide fallback when video starts loading
+            fallback.classList.remove('show');
+        });
+    }
 }

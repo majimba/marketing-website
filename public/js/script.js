@@ -56,7 +56,86 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Video fallback handling
     initializeVideoFallback();
+    
+    // Team page specific enhancements
+    initializeTeamPageEnhancements();
 });
+
+// Team Page Enhancements
+function initializeTeamPageEnhancements() {
+    const teamCards = document.querySelectorAll('.team-card');
+    if (teamCards.length === 0) return;
+    
+    // Add loading states to images
+    teamCards.forEach(card => {
+        const imageContainer = card.querySelector('.team-image-container');
+        const img = card.querySelector('img');
+        
+        if (imageContainer && img) {
+            // Add loading class initially
+            imageContainer.classList.add('loading');
+            
+            // Remove loading class when image loads
+            if (img.complete) {
+                imageContainer.classList.remove('loading');
+            } else {
+                img.addEventListener('load', () => {
+                    imageContainer.classList.remove('loading');
+                });
+                
+                img.addEventListener('error', () => {
+                    imageContainer.classList.remove('loading');
+                    // Add fallback styling for failed images
+                    imageContainer.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)';
+                    imageContainer.innerHTML = '<div class="flex items-center justify-center h-full text-gray-500"><span>Image unavailable</span></div>';
+                });
+            }
+        }
+        
+        // Add mouse tracking for lighting effect
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            
+            card.style.setProperty('--mouse-x', `${x}%`);
+            card.style.setProperty('--mouse-y', `${y}%`);
+        });
+        
+        // Reset mouse position on mouse leave
+        card.addEventListener('mouseleave', () => {
+            card.style.setProperty('--mouse-x', '50%');
+            card.style.setProperty('--mouse-y', '50%');
+        });
+    });
+    
+    // Add intersection observer for team cards to trigger animations
+    const teamObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    teamCards.forEach(card => {
+        teamObserver.observe(card);
+    });
+    
+    // Add hover effects for better interactivity
+    teamCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.zIndex = '10';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.zIndex = '1';
+        });
+    });
+}
 
 // Testimonial Slider Functionality
 function initializeTestimonialSlider() {

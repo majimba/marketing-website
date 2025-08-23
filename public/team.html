@@ -1,25 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Meet the Team — Luminary Co.</title>
-  <meta name="description" content="Meet Luminary Co.'s core team, The Luminaries collective, and our AI partner Arcane." />
+  <title>The Architects of Amplification — Luminary Co.</title>
+  <meta name="description" content="Meet the architects behind Luminary Co. Our leadership, creative collective, and AI partner are united by one mission: to amplify the stories shaping Africa's future." />
 
   <!-- OG / Twitter -->
-  <meta property="og:title" content="Meet the Team — Luminary Co.">
-  <meta property="og:description" content="Our leaders, the Luminaries collective, and Arcane (AI).">
+  <meta property="og:title" content="The Architects of Amplification — Luminary Co.">
+  <meta property="og:description" content="Meet the architects behind Luminary Co. Our leadership, creative collective, and AI partner are united by one mission: to amplify the stories shaping Africa's future.">
   <meta property="og:image" content="https://luminaryco.co/assets/og/team-1200x630.png">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="canonical" href="https://luminaryco.co/team.html" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Critical Resource Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="css/tailwind.min.css" as="style">
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="preload" href="js/script.min.js" as="script">
+
+  <!-- Optimized Font Loading -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@400;500&display=swap"></noscript>
+
+  <!-- Local Tailwind CSS -->
+  <link rel="stylesheet" href="css/tailwind.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/luminary-favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon/luminary-favicon-64x64.png">
 </head>
-<body>
+<body class="antialiased">
   <header class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-50 backdrop-blur-md transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Left side: Logo and Company Name -->
@@ -59,10 +77,10 @@
     </header>
 
   <main id="main" class="team-page" aria-labelledby="team-title">
-    <section class="page-hero">
-      <div class="container mx-auto px-6 text-center">
-        <h1 id="team-title" class="text-5xl md:text-7xl font-bold text-golden-yellow leading-tight mb-6">Meet the Team</h1>
-        <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">Our core leaders, The Luminaries collective, and Arcane—our embedded AI partner.</p>
+    <section class="page-hero fade-in">
+      <div class="container">
+        <h1 id="team-title">The Architects of Amplification</h1>
+        <p class="hero-subtitle">We are a collective of strategists, creators, and technologists. Meet the team dedicated to building your legacy.</p>
       </div>
     </section>
 
@@ -70,74 +88,85 @@
       <div class="container mx-auto px-6">
         <div class="team-grid">
           <!-- Chawana -->
-          <article class="team-card">
-            <img src="/assets/images/about/founders/chawana_maseka.png" alt="Chawana Maseka, CEO" width="480" height="480" loading="lazy" decoding="async">
+          <article class="team-card fade-in">
+            <div class="team-image-container">
+              <img src="/assets/images/about/founders/chawana_maseka.png" alt="Chawana Maseka, CEO and Co-founder of Luminary Co." width="480" height="480" loading="lazy" decoding="async">
+            </div>
             <div class="team-body">
               <h2 class="text-2xl font-bold text-golden-yellow mb-2">Chawana Maseka</h2>
               <p class="role text-lg text-gray-300 mb-3">Chief Executive Officer (CEO)</p>
               <p class="bio text-gray-400">
-                Music & film creator (directing, writing, producing), sound engineering, software engineering,
-                strategy, branding & communications—first-principles and design-thinking driven.
+                As the <strong>founding architect</strong>, Chawana unites strategy, technology, and creativity to build the systems that power our partners' visions. Driven by first-principles thinking, he engineers the blueprints for amplifying stories—from film and music production to software and brand communications.
               </p>
             </div>
           </article>
 
           <!-- Maynard -->
-          <article class="team-card">
-            <img src="/assets/images/about/founders/maynard_muchangwe.png" alt="Maynard, Chief Creative Officer (CCO)" width="480" height="480" loading="lazy" decoding="async">
+          <article class="team-card fade-in">
+            <div class="team-image-container">
+              <img src="/assets/images/about/founders/maynard_muchangwe.png" alt="Maynard Muchangwe, Chief Creative Officer and Co-founder of Luminary Co." width="480" height="480" loading="lazy" decoding="async">
+            </div>
             <div class="team-body">
-              <h2 class="text-2xl font-bold text-golden-yellow mb-2">Maynard</h2>
+              <h2 class="text-2xl font-bold text-golden-yellow mb-2">Maynard Muchangwe</h2>
               <p class="role text-lg text-gray-300 mb-3">Chief Creative Officer (CCO)</p>
               <p class="bio text-gray-400">
-                Film, photography, graphics & branding; client and influencer liaison; guardian of Luminary Co.'s creative feel.
+                Maynard is the <strong>guardian of our aesthetic</strong> and the visual translator of our partners' stories. Through world-class film, photography, and branding, he ensures every project not only looks exceptional but feels culturally authentic. He is the eye of Luminary Co.
               </p>
             </div>
           </article>
 
           <!-- Dolly -->
-          <article class="team-card">
-            <img src="/assets/images/team/dolly.jpg" alt="Delphine Dolly Mwape, Administration & Styling Lead" width="480" height="480" loading="lazy" decoding="async">
+          <article class="team-card fade-in">
+            <div class="team-image-container">
+              <img src="/assets/images/team/dolly.png" alt="Delphine Dolly Mwape, Administration & Styling Lead at Luminary Co." width="480" height="480" loading="lazy" decoding="async">
+            </div>
             <div class="team-body">
               <h2 class="text-2xl font-bold text-golden-yellow mb-2">Delphine Dolly Mwape</h2>
               <p class="role text-lg text-gray-300 mb-3">Administration & Styling Lead</p>
               <p class="bio text-gray-400">
-                Operations backbone; styling, wardrobe & makeup leadership for artists and productions; ensures polished presentation.
+                Dolly is the <strong>orchestrator of excellence</strong>, ensuring every production is seamless from start to finish. As the backbone of our operations and our lead for styling and wardrobe, she brings a critical eye for detail that guarantees every artist and brand is presented with polish and power.
               </p>
             </div>
           </article>
 
           <!-- Julu -->
-          <article class="team-card">
-            <img src="/assets/images/team/julu.jpg" alt="Roy "Julu" Miyoba, Sound Engineer, Producer & Artist" width="480" height="480" loading="lazy" decoding="async">
+          <article class="team-card fade-in">
+            <div class="team-image-container">
+              <img src="/assets/images/team/julu.png" alt="Roy 'Julu' Miyoba, Sound Engineer, Producer & Artist at Luminary Co." width="480" height="480" loading="lazy" decoding="async">
+            </div>
             <div class="team-body">
               <h2 class="text-2xl font-bold text-golden-yellow mb-2">Roy "Julu" Miyoba</h2>
-              <p class="role text-lg text-gray-300 mb-3">Sound Engineer, Producer & Artist</p>
+              <p class="role text-lg text-gray-300 mb-3">Head of Audio</p>
               <p class="bio text-gray-400">
-                In-house audio lead and rapper; shapes Luminary Co.'s sonic identity and supports cross-team productions.
+                Julu is the <strong>architect of our sound</strong>. As an accomplished producer, engineer, and artist, he shapes the sonic identity that gives our projects their emotional weight and cultural resonance. He leads our in-house audio capabilities, ensuring every story is not just seen, but deeply felt.
               </p>
             </div>
           </article>
 
           <!-- The Luminaries -->
-          <article class="team-card">
-            <img class="role-icon" src="/assets/icons/roles/collective.svg" alt="" aria-hidden="true" width="72" height="72" loading="lazy" decoding="async">
+          <article class="team-card fade-in">
+            <div class="team-image-container collective">
+              <img src="/assets/images/team/the_luminaries.png" alt="The Luminaries creative collective" width="480" height="480" loading="lazy" decoding="async">
+            </div>
             <div class="team-body">
               <h2 class="text-2xl font-bold text-golden-yellow mb-2">The Luminaries</h2>
               <p class="role text-lg text-gray-300 mb-3">Creative Collective</p>
               <p class="bio text-gray-400">
-                Our multi-disciplinary engine: virtual record label, film/media crew, and artist development hub.
+                The Luminaries are our <strong>multi-disciplinary creative engine</strong>. This collective of filmmakers, musicians, designers, and developers is our artist development hub and the hands-on crew that brings our most ambitious productions to life.
               </p>
             </div>
           </article>
 
           <!-- Arcane -->
-          <article class="team-card">
-            <img class="role-icon" src="/assets/icons/roles/ai.svg" alt="" aria-hidden="true" width="72" height="72" loading="lazy" decoding="async">
+          <article class="team-card fade-in">
+            <div class="team-image-container ai">
+              <img src="/assets/images/team/arcane.png" alt="Arcane AI partner" width="480" height="480" loading="lazy" decoding="async">
+            </div>
             <div class="team-body">
               <h2 class="text-2xl font-bold text-golden-yellow mb-2">Arcane</h2>
               <p class="role text-lg text-gray-300 mb-3">Generative AI Partner</p>
               <p class="bio text-gray-400">
-                Embedded AI augmenting creativity, production, coding, strategy, and admin across the company.
+                Arcane is our <strong>embedded intelligence engine</strong>, augmenting the entire team. This AI partner supercharges our workflow, from creative ideation and coding to strategic analysis, allowing our human talent to work faster, smarter, and more effectively.
               </p>
             </div>
           </article>
@@ -152,7 +181,7 @@
         <img src="assets/logos/luminary-logo.png" alt="Luminary Co. Logo" class="h-8 w-auto">
         <span class="text-xl font-bold text-golden-yellow">LUMINARY CO.</span>
       </div>
-      <p class="text-gray-400 mb-4">Powering Africa's cultural renaissance through bold storytelling, strategy, and digital-first experiences.</p>
+      <p class="text-gray-400 mb-4">Let's build the future, together. <strong>Your Story, Amplified.</strong></p>
       <div class="flex justify-center space-x-6">
         <a href="/" class="text-gray-400 hover:text-golden-yellow transition-colors">Home</a>
         <a href="/#about" class="text-gray-400 hover:text-golden-yellow transition-colors">About</a>
@@ -175,9 +204,9 @@
     "logo":"https://luminaryco.co/assets/logos/luminary-logo-1000x1000.png",
     "member":[
       {"@type":"Person","name":"Chawana Maseka","jobTitle":"CEO"},
-      {"@type":"Person","name":"Maynard","jobTitle":"Chief Creative Officer"},
+      {"@type":"Person","name":"Maynard Muchangwe","jobTitle":"Chief Creative Officer"},
       {"@type":"Person","name":"Delphine Dolly Mwape","jobTitle":"Administration & Styling Lead"},
-      {"@type":"Person","name":"Roy "Julu" Miyoba","jobTitle":"Sound Engineer, Producer & Artist"},
+      {"@type":"Person","name":"Roy 'Julu' Miyoba","jobTitle":"Sound Engineer, Producer & Artist"},
       {"@type":"Organization","name":"The Luminaries"},
       {"@type":"Thing","name":"Arcane","description":"Generative AI Partner"}
     ]

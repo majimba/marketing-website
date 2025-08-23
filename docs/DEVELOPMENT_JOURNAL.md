@@ -358,3 +358,35 @@ luminary_co_website/
 *Last Updated: December 2024*  
 *Project Status: Production Ready - Phase 1 Complete*  
 *Next Phase: Code Refactoring & Optimization*
+
+---
+
+## 🗓️ August 2025 – Team Page & Navigation Refinements
+
+### Summary
+- Synchronized `team.html` header with home page: Tailwind/fonts loading, `scroll-smooth`, and `antialiased` classes for consistent rendering.
+- Standardized team grid card sizing for perfect alignment across rows.
+- Replaced outdated `.jpg` team assets with optimized `.png` versions and added missing images.
+
+### Technical Changes
+- `public/team.html`
+  - Added preconnect/preload for fonts and local CSS/JS to mirror `index.html`.
+  - Linked `css/tailwind.min.css` and `css/style.css` identically to home.
+  - Ensured desktop/mobile nav structure and links match home page.
+- `public/css/style.css`
+  - Introduced sizing variables: `--team-image-height`, `--team-body-min-height`, `--team-bio-lines`.
+  - Set `.team-grid { align-items: stretch }` and `.team-card { height: 100% }` for equal-height cards.
+  - Fixed image container height via variable and clamped bio text lines for uniformity.
+  - Responsive variable adjustments at 1200px and 768px breakpoints.
+- Assets
+  - Added: `assets/images/team/{arcane.png,dolly.png,julu.png,the_luminaries.png}`
+  - Removed: legacy `dolly.jpg`, `julu.jpg`.
+
+### Branch & Deploy
+- Branch: `team-building`
+- Commit: Align nav with home; standardize team card sizing; add assets.
+- Action: Pushed to origin; open PR when ready to merge.
+
+### Next
+- Validate on multiple devices; tweak bio line clamp if copy changes.
+- Create/attach OG image for the team page.

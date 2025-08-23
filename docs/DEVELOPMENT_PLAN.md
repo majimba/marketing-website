@@ -402,9 +402,10 @@ luminary_co_website/
 
 - ✅ **CSS Styling & Responsiveness**
   - Team page specific styles added to `style.css`
-  - Responsive grid layout (auto-fit, minmax 260px)
+  - Responsive grid layout with equal-height cards across rows
   - Hover effects and smooth transitions
   - Mobile breakpoint optimizations
+  - CSS variables for consistent sizing: image height, body min-height, bio line clamp
 
 - ✅ **Asset Creation & Management**
   - SVG icons for collective and AI roles
@@ -413,7 +414,7 @@ luminary_co_website/
 
 #### **Technical Implementation Details:**
 - **File Structure**: Created `/public/team.html` with complete team layout
-- **CSS Integration**: Added `.team-page` styles to existing stylesheet
+- **CSS Integration**: Added `.team-page` styles and alignment variables to existing stylesheet
 - **Navigation**: Seamless integration with existing header/footer
 - **SEO**: Schema markup, meta tags, and canonical URLs
 - **Performance**: Lazy loading, optimized images, and efficient CSS

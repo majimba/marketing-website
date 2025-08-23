@@ -5,14 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luminary Co. – Your Story, Amplified.</title>
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Luminary Co. is a Lusaka-based creative and media ecosystem powering Africa's cultural renaissance through bold storytelling, strategy, and digital-first experiences.">
+    <meta name="keywords" content="creative agency, media production, content creation, talent management, strategic communications, music entertainment, media buying, Zambia, Africa">
+    <meta name="author" content="Luminary Co.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Luminary Co. – Your Story, Amplified.">
+    <meta property="og:description" content="Powering Africa's cultural renaissance through bold storytelling, strategy, and digital-first experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://luminaryco.co">
+    <meta property="og:image" content="https://luminaryco.co/assets/logos/luminary-logo-1000x1000.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luminary Co. – Your Story, Amplified.">
+    <meta name="twitter:description" content="Powering Africa's cultural renaissance through bold storytelling, strategy, and digital-first experiences.">
+    <meta name="twitter:image" content="https://luminaryco.co/assets/logos/luminary-logo-1000x1000.png">
+    
+    <!-- Performance Meta Tags -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#ffc75b">
+    
+    <!-- Critical Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/tailwind.min.css" as="style">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/script.min.js" as="script">
+    <link rel="preload" href="assets/logos/luminary-logo.png" as="image">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/luminary-favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon/luminary-favicon-64x64.png">
     
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Optimized Font Loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@400;500&display=swap"></noscript>
+    
+    <!-- Local Tailwind CSS (will replace CDN) -->
+    <link rel="stylesheet" href="css/tailwind.min.css">
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css">
@@ -24,7 +60,7 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Left side: Logo and Company Name -->
             <a href="#" class="flex items-center space-x-3">
-                <img src="assets/logos/luminary-logo.png" alt="Luminary Co. Logo" class="h-10 md:h-12 w-auto">
+                <img src="assets/logos/luminary-logo.png" alt="Luminary Co. Logo" class="h-10 md:h-12 w-auto" loading="eager">
                 <span class="text-2xl font-bold text-golden-yellow">LUMINARY CO.</span>
             </a>
             
@@ -59,12 +95,10 @@
     <main>
         <!-- 1. Hero Section -->
         <section id="hero" class="h-screen relative flex items-center justify-center text-center text-white overflow-hidden">
-            <!-- Video Background -->
-            <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
-                <source src="assets/images/hero/luminary-hero-background.mp4" type="video/mp4">
-                <!-- Fallback background if video doesn't load -->
-                <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
-            </video>
+            <!-- Optimized Background: CSS-based animation instead of heavy video -->
+            <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+                <div class="absolute inset-0 bg-pattern"></div>
+            </div>
             
             <!-- Content Overlay -->
             <div class="bg-black bg-opacity-60 p-10 rounded-lg relative z-10">
@@ -95,7 +129,7 @@
                     <div class="text-center">
                                             <img src="assets/images/about/luminary-team-photo.png" 
                          alt="Luminary Co. Team" 
-                         class="w-full max-w-lg mx-auto rounded-lg shadow-2xl hover:scale-105 transition-transform duration-300">
+                         class="w-full max-w-lg mx-auto rounded-lg shadow-2xl hover:scale-105 transition-transform duration-300" loading="lazy">
                         <p class="text-sm text-gray-400 mt-2">Our creative team in action</p>
                     </div>
                 </div>
@@ -112,7 +146,7 @@
                          <div class="profile-image-container w-64 h-64 mx-auto mb-6 shadow-2xl hover:scale-105 transition-transform duration-300">
                              <img src="assets/images/about/founders/chawana_maseka.png" 
                                   alt="Chawana Maseka - Co-Founder & CEO" 
-                                  class="profile-image">
+                                  class="profile-image" loading="lazy">
                          </div>
                          <h3 class="text-2xl font-bold text-golden-yellow mb-2">Chawana Maseka</h3>
                          <p class="text-lg text-white mb-3">Co-Founder & CEO</p>
@@ -122,7 +156,7 @@
                          <div class="profile-image-container w-64 h-64 mx-auto mb-6 shadow-2xl hover:scale-105 transition-transform duration-300">
                              <img src="assets/images/about/founders/maynard_muchangwe.png" 
                                   alt="Maynard Muchangwe - Co-Founder & Chief Creative Officer" 
-                                  class="profile-image">
+                                  class="profile-image" loading="lazy">
                          </div>
                          <h3 class="text-2xl font-bold text-golden-yellow mb-3">Maynard Muchangwe</h3>
                          <p class="text-lg text-white mb-3">Co-Founder & Chief Creative Officer</p>
@@ -141,7 +175,7 @@
                     <!-- Service Item: Media Production -->
                     <div class="bg-black p-8 rounded-lg border border-gray-800 hover:border-golden-yellow transition-all duration-300 transform hover:-translate-y-2">
                         <div class="mb-6 flex justify-center">
-                            <img src="assets/images/services/media_prod.png" alt="Media Production" class="w-16 h-16 object-cover rounded-lg">
+                            <img src="assets/images/services/media_prod.png" alt="Media Production" class="w-16 h-16 object-cover rounded-lg" loading="lazy">
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-golden-yellow">Media Production</h3>
                         <p class="text-gray-400">Film, photography, and audio that demand attention and command the global stage.</p>
@@ -149,7 +183,7 @@
                     <!-- Service Item: Content Creation -->
                     <div class="bg-black p-8 rounded-lg border border-gray-800 hover:border-golden-yellow transition-all duration-300 transform hover:-translate-y-2">
                         <div class="mb-6 flex justify-center">
-                            <img src="assets/images/services/content_creation.png" alt="Content Creation" class="w-16 h-16 object-cover rounded-lg">
+                            <img src="assets/images/services/content_creation.png" alt="Content Creation" class="w-16 h-16 object-cover rounded-lg" loading="lazy">
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-golden-yellow">Content Creation</h3>
                         <p class="text-gray-400">Social campaigns, branded storytelling, and digital assets that spark conversation.</p>
@@ -157,7 +191,7 @@
                     <!-- Service Item: Talent Management -->
                     <div class="bg-black p-8 rounded-lg border border-gray-800 hover:border-golden-yellow transition-all duration-300 transform hover:-translate-y-2">
                         <div class="mb-6 flex justify-center">
-                            <img src="assets/images/services/talent.png" alt="Talent Management" class="w-16 h-16 object-cover rounded-lg">
+                            <img src="assets/images/services/talent.png" alt="Talent Management" class="w-16 h-16 object-cover rounded-lg" loading="lazy">
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-golden-yellow">Talent Management</h3>
                         <p class="text-gray-400">Influencer partnerships, representation, and career growth for Africa's top creators.</p>
@@ -165,7 +199,7 @@
                     <!-- Service Item: Strategic Comms -->
                     <div class="bg-black p-8 rounded-lg border border-gray-800 hover:border-golden-yellow transition-all duration-300 transform hover:-translate-y-2">
                         <div class="mb-6 flex justify-center">
-                            <img src="assets/images/services/strategic_comms.png" alt="Strategic Communications" class="w-16 h-16 object-cover rounded-lg">
+                            <img src="assets/images/services/strategic_comms.png" alt="Strategic Communications" class="w-16 h-16 object-cover rounded-lg" loading="lazy">
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-golden-yellow">Strategic Comms</h3>
                         <p class="text-gray-400">PR, brand positioning, and reputation management built with precision and insight.</p>
@@ -173,7 +207,7 @@
                     <!-- Service Item: Music & Entertainment -->
                     <div class="bg-black p-8 rounded-lg border border-gray-800 hover:border-golden-yellow transition-all duration-300 transform hover:-translate-y-2">
                         <div class="mb-6 flex justify-center">
-                            <img src="assets/images/services/music.png" alt="Music & Entertainment" class="w-16 h-16 object-cover rounded-lg">
+                            <img src="assets/images/services/music.png" alt="Music & Entertainment" class="w-16 h-16 object-cover rounded-lg" loading="lazy">
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-golden-yellow">Music & Entertainment</h3>
                         <p class="text-gray-400">Artist development, unforgettable live events, and global music distribution.</p>
@@ -181,7 +215,7 @@
                     <!-- Service Item: Media Buying -->
                     <div class="bg-black p-8 rounded-lg border border-gray-800 hover:border-golden-yellow transition-all duration-300 transform hover:-translate-y-2">
                         <div class="mb-6 flex justify-center">
-                            <img src="assets/images/services/media_buying.png" alt="Media Buying" class="w-16 h-16 object-cover rounded-lg">
+                            <img src="assets/images/services/media_buying.png" alt="Media Buying" class="w-16 h-16 object-cover rounded-lg" loading="lazy">
                         </div>
                         <h3 class="text-2xl font-bold mb-3 text-golden-yellow">Media Buying</h3>
                         <p class="text-gray-400">Paid digital and traditional strategies engineered to amplify your reach and impact.</p>
@@ -198,7 +232,7 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Portfolio Item 1: Marketing Campaign -->
                     <div class="group relative overflow-hidden rounded-lg">
-                        <img src="assets/images/portfolio/marketing.png" alt="Zambia Tourism Marketing Campaign" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="assets/images/portfolio/marketing.png" alt="Zambia Tourism Marketing Campaign" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                         <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <h3 class="text-2xl font-bold text-golden-yellow">Zambia Tourism Board</h3>
                             <p class="text-white">National tourism campaign delivered 200% increase in engagement and 150% boost in bookings.</p>
@@ -206,7 +240,7 @@
                     </div>
                     <!-- Portfolio Item 2: Artist Launch -->
                     <div class="group relative overflow-hidden rounded-lg">
-                        <img src="assets/images/portfolio/artist.png" alt="Music Artist Launch Campaign" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="assets/images/portfolio/artist.png" alt="Music Artist Launch Campaign" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                         <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <h3 class="text-2xl font-bold text-golden-yellow">Mukuka Music</h3>
                             <p class="text-white">Launched emerging artist to #1 on local charts with 500K+ streams in first month.</p>
@@ -214,7 +248,7 @@
                     </div>
                     <!-- Portfolio Item 3: PR Campaign -->
                     <div class="group relative overflow-hidden rounded-lg">
-                        <img src="assets/images/portfolio/pr.png" alt="International PR Campaign" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="assets/images/portfolio/pr.png" alt="International PR Campaign" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                         <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <h3 class="text-2xl font-bold text-golden-yellow">Lusaka Innovation Hub</h3>
                             <p class="text-white">Secured major international media features in Forbes, BBC, and CNN Africa.</p>
@@ -256,7 +290,7 @@
                             <!-- Testimonial 1: CEO -->
                             <div class="w-full flex-shrink-0 text-center">
                                 <div class="mb-8 flex justify-center">
-                                    <img src="assets/images/testimonials/ceo.png" alt="Corporate CEO" class="w-32 h-32 rounded-full object-cover border-2 border-golden-yellow shadow-lg">
+                                    <img src="assets/images/testimonials/ceo.png" alt="Corporate CEO" class="w-32 h-32 rounded-full object-cover border-2 border-golden-yellow shadow-lg" loading="lazy">
                                 </div>
                                 <p class="text-2xl italic text-gray-300 mb-6">"Luminary Co. didn't just deliver a campaign; they started a conversation. Their strategic insight is unmatched."</p>
                                 <p class="font-bold text-lg text-golden-yellow">Sarah Mwamba, CEO</p>
@@ -265,7 +299,7 @@
                             <!-- Testimonial 2: Artist -->
                             <div class="w-full flex-shrink-0 text-center">
                                 <div class="mb-8 flex justify-center">
-                                    <img src="assets/images/testimonials/artist.png" alt="Music Artist" class="w-32 h-32 rounded-full object-cover border-2 border-golden-yellow shadow-lg">
+                                    <img src="assets/images/testimonials/artist.png" alt="Music Artist" class="w-32 h-32 rounded-full object-cover border-2 border-golden-yellow shadow-lg" loading="lazy">
                                 </div>
                                 <p class="text-2xl italic text-gray-300 mb-6">"Working with them took my career to the next level. They understand the artist's journey."</p>
                                 <p class="font-bold text-lg text-golden-yellow">Mukuka Banda</p>
@@ -274,7 +308,7 @@
                             <!-- Testimonial 3: NGO Director -->
                             <div class="w-full flex-shrink-0 text-center">
                                 <div class="mb-8 flex justify-center">
-                                    <img src="assets/images/testimonials/ngo.png" alt="NGO Director" class="w-32 h-32 rounded-full object-cover border-2 border-golden-yellow shadow-lg">
+                                    <img src="assets/images/testimonials/ngo.png" alt="NGO Director" class="w-32 h-32 rounded-full object-cover border-2 border-golden-yellow shadow-lg" loading="lazy">
                                 </div>
                                 <p class="text-2xl italic text-gray-300 mb-6">"Their professionalism and world-class quality brought our vision to life in ways we couldn't imagine."</p>
                                 <p class="font-bold text-lg text-golden-yellow">Dr. Chisenga Mwale</p>
@@ -329,7 +363,7 @@
                     <div class="mt-8">
                         <h4 class="text-lg font-semibold mb-3 text-white">Our Location</h4>
                         <a href="https://maps.app.goo.gl/HXNFeEsVQYtXggae6" target="_blank" rel="noopener noreferrer" class="block group">
-                            <img src="assets/images/services/map.png" alt="Luminary Co. Office Location Map - Click for Directions" class="w-full rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+                            <img src="assets/images/services/map.png" alt="Luminary Co. Office Location Map - Click for Directions" class="w-full rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy">
                             <p class="text-sm text-gray-400 mt-2 text-center group-hover:text-golden-yellow transition-colors">📍 Click for directions on Google Maps</p>
                         </a>
                     </div>
@@ -342,7 +376,7 @@
     <footer class="bg-[#1a1a1a] py-12">
         <div class="container mx-auto px-6 text-center text-gray-400">
             <div class="flex justify-center items-center mb-2 space-x-3">
-                <img src="assets/logos/luminary-logo.png" alt="Luminary Co. Logo" class="h-16 w-auto">
+                <img src="assets/logos/luminary-logo.png" alt="Luminary Co. Logo" class="h-16 w-auto" loading="eager">
                 <span class="text-3xl font-bold text-golden-yellow">LUMINARY CO.</span>
             </div>
             <p class="mb-6">Your Story, Amplified.</p>
@@ -358,7 +392,7 @@
     </footer>
 
     <!-- Custom JavaScript -->
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
 
 </body>
 </html>

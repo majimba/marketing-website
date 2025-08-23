@@ -1,0 +1,20 @@
+{
+  "name": "luminary_co_website",
+  "version": "1.0.0",
+  "description": "A modern, single-page marketing website for Luminary Co., a Lusaka-based creative and media agency. Built with HTML, Tailwind CSS, and vanilla JavaScript for optimal performance and maintainability.",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/style.css -o ./css/tailwind.min.css --minify",
+    "build:js": "terser js/script.js -o js/script.min.js --compress --mangle",
+    "build": "npm run build:css && npm run build:js",
+    "watch:css": "tailwindcss -i ./css/style.css -o ./css/tailwind.min.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^4.1.12",
+    "terser": "^5.43.1"
+  }
+}

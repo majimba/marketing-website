@@ -1,6 +1,19 @@
 // Luminary Co. - Main JavaScript
 // Extracted from index.html for better organization and maintainability
 
+// Service Worker Registration
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/js/sw.js')
+      .then(registration => {
+        console.log('SW registered: ', registration);
+      })
+      .catch(registrationError => {
+        console.log('SW registration failed: ', registrationError);
+      });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -37,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fade-in on Scroll
     initializeFadeInEffects();
+    
+    // Performance optimization: Intersection Observer for images
+    initializeLazyLoading();
 });
 
 // Testimonial Slider Functionality
@@ -106,5 +122,30 @@ function initializeFadeInEffects() {
 
     faders.forEach(fader => {
         appearOnScroll.observe(fader);
+    });
+}
+
+// Lazy Loading for Images
+function initializeLazyLoading() {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    
+    if (images.length === 0) return;
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src || img.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '50px 0px',
+        threshold: 0.01
+    });
+    
+    images.forEach(img => {
+        imageObserver.observe(img);
     });
 }

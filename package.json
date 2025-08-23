@@ -6,7 +6,8 @@
   "scripts": {
     "build:css": "tailwindcss -c tailwind.config.js -i ./css/tw.css -o ./css/tailwind.min.css --minify",
     "build:js": "terser js/script.js -o js/script.min.js --compress --mangle",
-    "build": "npm run build:css && npm run build:js",
+    "build": "npm run build:css && npm run build:js && npm run build:vercel",
+    "build:vercel": "rm -rf public && mkdir public && cp -r assets css js index.html public/",
     "watch:css": "tailwindcss -c tailwind.config.js -i ./css/tw.css -o ./css/tailwind.min.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

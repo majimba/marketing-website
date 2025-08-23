@@ -14,75 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000000;
-            color: #ffffff;
-            scroll-padding-top: 80px; /* Ensures contact section is properly positioned when scrolled to */
-            background-image: radial-gradient(circle, rgba(255, 199, 91, 0.15) 2px, transparent 2px);
-            background-size: 40px 40px;
-            animation: moveDots 10s linear infinite;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-        }
-        .bg-golden-yellow { background-color: #ffc75b; }
-        .text-golden-yellow { color: #ffc75b; }
-        .border-golden-yellow { border-color: #ffc75b; }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Perfect centering for circular profile images */
-        .profile-image-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 50%;
-        }
-        
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center center;
-        }
-        
-        /* Alternative approach using background positioning for better face centering */
-        .profile-image-bg {
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-        }
-        
-        @keyframes moveDots {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 40px 40px;
-            }
-        }
-        
-        /* Ensure content sections maintain their backgrounds */
-        header, section, footer {
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Add subtle movement pattern to specific sections */
-        .movement-bg {
-            background-image: radial-gradient(circle, rgba(255, 199, 91, 0.08) 1px, transparent 1px);
-            background-size: 30px 30px;
-            animation: moveDots 15s linear infinite;
-        }
-    </style>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="antialiased">
 
@@ -424,85 +357,8 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Smooth Scrolling for Nav Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-
-        // Testimonial Slider
-        const slider = document.querySelector('#testimonial-slider .flex');
-        const dotsContainer = document.getElementById('testimonial-dots');
-        const testimonials = slider.children;
-        let currentIndex = 0;
-
-        // Create dots
-        Array.from(testimonials).forEach((_, index) => {
-            const dot = document.createElement('button');
-            dot.classList.add('w-3', 'h-3', 'rounded-full', 'transition-colors');
-            dot.classList.add(index === 0 ? 'bg-golden-yellow' : 'bg-gray-700');
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-            });
-            dotsContainer.appendChild(dot);
-        });
-        
-        const dots = dotsContainer.children;
-
-        function goToSlide(index) {
-            slider.style.transform = `translateX(-${index * 100}%)`;
-            currentIndex = index;
-            updateDots();
-        }
-        
-        function updateDots() {
-             Array.from(dots).forEach((dot, index) => {
-                dot.classList.toggle('bg-golden-yellow', index === currentIndex);
-                dot.classList.toggle('bg-gray-700', index !== currentIndex);
-            });
-        }
-
-        setInterval(() => {
-            let nextIndex = (currentIndex + 1) % testimonials.length;
-            goToSlide(nextIndex);
-        }, 5000);
-
-        // Fade-in on Scroll
-        const faders = document.querySelectorAll('.fade-in');
-        const appearOptions = {
-            threshold: 0.2,
-            rootMargin: "0px 0px -50px 0px"
-        };
-        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('visible');
-                    appearOnScroll.unobserve(entry.target);
-                }
-            });
-        }, appearOptions);
-
-        faders.forEach(fader => {
-            appearOnScroll.observe(fader);
-        });
-    </script>
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>

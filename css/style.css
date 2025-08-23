@@ -1,0 +1,82 @@
+/* Luminary Co. - Main Stylesheet */
+/* Extracted from index.html for better organization and maintainability */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    scroll-padding-top: 80px; /* Ensures contact section is properly positioned when scrolled to */
+    background-image: radial-gradient(circle, rgba(255, 199, 91, 0.15) 2px, transparent 2px);
+    background-size: 40px 40px;
+    animation: moveDots 10s linear infinite;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bg-golden-yellow { 
+    background-color: #ffc75b; 
+}
+
+.text-golden-yellow { 
+    color: #ffc75b; 
+}
+
+.border-golden-yellow { 
+    border-color: #ffc75b; 
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Perfect centering for circular profile images */
+.profile-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* Alternative approach using background positioning for better face centering */
+.profile-image-bg {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@keyframes moveDots {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 40px 40px;
+    }
+}
+
+/* Ensure content sections maintain their backgrounds */
+header, section, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Add subtle movement pattern to specific sections */
+.movement-bg {
+    background-image: radial-gradient(circle, rgba(255, 199, 91, 0.08) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: moveDots 15s linear infinite;
+}

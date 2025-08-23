@@ -16,6 +16,12 @@ body {
     --team-image-height: 320px;
     --team-body-min-height: 260px;
     --team-bio-lines: 5;
+    
+    /* New variables for consistent image sizing */
+    --founder-image-size: 240px;
+    --founder-image-size-mobile: 200px;
+    --founder-image-size-tablet: 220px;
+    --founder-image-size-desktop: 280px;
 }
 
 /* Override any global styles that might affect the header */
@@ -92,7 +98,44 @@ header .logo-container img[src*="undefined"] {
     display: none !important;
 }
 
-/* Ensure logo container maintains proper spacing even without image */
+/* Ensure logo container maintains proper proportions */
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* ===== LOGO COMPONENT STANDARDIZATION ===== */
+
+/* Mobile logo optimization */
+@media (max-width: 768px) {
+    header .logo-container img {
+        height: 28px;
+        width: 28px;
+        margin-right: 8px;
+    }
+    
+    header .logo-container span {
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+}
+
+/* iPhone 13 and similar mobile devices */
+@media (max-width: 390px) {
+    header .logo-container img {
+        height: 24px;
+        width: 24px;
+        margin-right: 6px;
+    }
+    
+    header .logo-container span {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+}
+
+/* Ensure logo container maintains proper spacing */
 header .logo-container {
     display: flex;
     align-items: center;
@@ -101,6 +144,7 @@ header .logo-container {
     border: none !important;
     outline: none !important;
     min-height: 32px;
+    flex-shrink: 0;
 }
 
 header .logo-container span {
@@ -791,4 +835,350 @@ header, section, footer {
     .team-card .team-body {
         padding: 16px;
     }
+}
+
+/* ===== FOUNDER IMAGE STANDARDIZATION ===== */
+
+/* Standardized founder image container */
+.founder-img,
+.profile-image {
+    width: var(--founder-image-size);
+    height: var(--founder-image-size);
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Profile image container for homepage founders */
+.profile-image-container {
+    width: var(--founder-image-size);
+    height: var(--founder-image-size);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Team member image standardization */
+.team-member img,
+.team-image-container img {
+    width: 100%;
+    height: var(--team-image-height, 300px);
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Ensure consistent team card heights */
+.team-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card .team-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive founder image adjustments */
+@media (max-width: 768px) {
+    .founder-img,
+    .profile-image {
+        width: var(--founder-image-size-mobile);
+        height: var(--founder-image-size-mobile);
+    }
+    
+    .profile-image-container {
+        width: var(--founder-image-size-mobile);
+        height: var(--founder-image-size-mobile);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .founder-img,
+    .profile-image {
+        width: var(--founder-image-size-tablet);
+        height: var(--founder-image-size-tablet);
+    }
+    
+    .profile-image-container {
+        width: var(--founder-image-size-tablet);
+        height: var(--founder-image-size-tablet);
+    }
+}
+
+@media (min-width: 1025px) {
+    .founder-img,
+    .profile-image {
+        width: var(--founder-image-size-desktop);
+        height: var(--founder-image-size-desktop);
+    }
+    
+    .profile-image-container {
+        width: var(--founder-image-size-desktop);
+        height: var(--founder-image-size-desktop);
+    }
+}
+
+/* iPhone 13 and similar mobile devices */
+@media (max-width: 390px) {
+    .founder-img,
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .profile-image-container {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* ===== TEAM PAGE LAYOUT FIXES ===== */
+
+/* Team hero section restoration */
+.team-hero,
+.page-hero {
+    text-align: center;
+    padding: clamp(40px, 6vw, 80px) 20px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+    margin-top: 80px; /* Account for fixed header */
+}
+
+.team-hero .container,
+.page-hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Team grid container fixes */
+.team-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: stretch;
+    justify-items: center;
+    padding: 40px 0;
+}
+
+.team-grid .team-card {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Team grid responsive layout */
+@media (min-width: 1200px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 60px 0;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 40px 0;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .team-hero,
+    .page-hero {
+        padding: 40px 20px;
+        margin-top: 60px;
+    }
+    
+    .team-hero h1,
+    .page-hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .team-hero p,
+    .page-hero p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .team-hero,
+    .page-hero {
+        padding: 60px 40px;
+    }
+    
+    .team-hero h1,
+    .page-hero h1 {
+        font-size: 4rem;
+    }
+    
+    .team-hero p,
+    .page-hero p {
+        font-size: 1.5rem;
+        max-width: 800px;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 0 2rem;
+    }
+}
+
+/* Consistent spacing and typography across pages */
+.page-section {
+    padding: clamp(40px, 6vw, 80px) 20px;
+}
+
+.page-heading {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.page-description {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+}
+
+/* ===== FINAL RESPONSIVE OPTIMIZATIONS ===== */
+
+/* General mobile optimizations */
+@media (max-width: 768px) {
+    .team-hero h1,
+    .page-hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .team-hero p,
+    .page-hero p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    /* Ensure proper spacing on mobile */
+    .team-card {
+        margin-bottom: 1rem;
+    }
+    
+    .team-card .team-body {
+        padding: 20px;
+    }
+}
+
+/* iPhone 13 and similar mobile devices - additional fixes */
+@media (max-width: 390px) {
+    .team-hero h1,
+    .page-hero h1 {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    .team-hero p,
+    .page-hero p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .team-grid {
+        padding: 0 0.5rem;
+    }
+    
+    .team-card .team-body {
+        padding: 16px;
+    }
+    
+    .team-card .team-body h2 {
+        font-size: 1.25rem;
+    }
+    
+    .team-card .role {
+        font-size: 0.9rem;
+    }
+    
+    .team-card .bio {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+}
+
+/* Ensure cross-page consistency */
+.team-page .team-hero,
+.team-page .page-hero {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+    color: #1f2937;
+}
+
+.team-page .team-hero h1,
+.team-page .page-hero h1 {
+    color: #111827;
+    font-weight: 700;
+}
+
+.team-page .team-hero p,
+.team-page .page-hero p {
+    color: #374151;
+}
+
+/* Fix for team page background consistency */
+.team-page {
+    background-color: #000000;
+}
+
+.team-page .team-hero,
+.team-page .page-hero {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+    margin-top: 80px;
+}
+
+/* Ensure team cards maintain consistent styling */
+.team-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.team-card:hover {
+    border-color: #ffc75b;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(255, 199, 91, 0.2);
 }

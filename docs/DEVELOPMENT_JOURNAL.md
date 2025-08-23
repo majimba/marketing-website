@@ -390,3 +390,157 @@ luminary_co_website/
 ### Next
 - Validate on multiple devices; tweak bio line clamp if copy changes.
 - Create/attach OG image for the team page.
+
+## ��️ August 2025 – Bug Fixes & UI Refinements
+
+### Summary
+- **Phase**: Bug Fixes & UI Refinements
+- **Status**: 🚧 IN PROGRESS - Bug Report Analysis Complete
+- **Priority**: High - Critical UI issues affecting user experience
+- **Git Branch**: `bugs-fixes-23aug-5pm` (current working branch)
+- **Estimated Duration**: 1-2 days
+
+### Bug Report Analysis ✅ COMPLETED
+**Date**: August 23, 2025  
+**Status**: Analysis complete, implementation plan ready  
+**Source**: User testing and feedback  
+
+#### **Critical Issues Identified:**
+
+1. **Founders Section (Homepage & Team Page)**
+   - **Issue**: Circular container crops Founders' images incorrectly, cutting off parts of faces
+   - **Impact**: Professional appearance compromised, brand credibility affected
+   - **Priority**: High
+
+2. **Mobile View (iPhone 13, teams.html)**
+   - **Issue A**: Logo sizing incorrect - logo larger than text, inverted order
+   - **Issue B**: Unnecessary footnotes "Let's build the future together" appear
+   - **Impact**: Poor mobile UX, inconsistent branding
+   - **Priority**: High
+
+3. **Tablet View (Vertical, teams.html)**
+   - **Issue**: Top section missing (heading "Architects of Amplification" + copy)
+   - **Issue**: Images not in container, left-aligned instead of centered
+   - **Issue**: Text not aligned with images
+   - **Impact**: Broken tablet experience, content not accessible
+   - **Priority**: High
+
+4. **Home Page (Founders Section)**
+   - **Issue**: Founders' images not fully displayed
+   - **Impact**: Inconsistent with team page, poor visual presentation
+   - **Priority**: Medium
+
+### Technical Implementation Plan 🎯
+
+#### **Phase 1: CSS Refactoring & Image Container Standardization**
+- [ ] **Standardize image containers** with `object-fit: cover` and consistent aspect ratios
+- [ ] **Fix circular containers** with proper `border-radius: 50%` and responsive sizing
+- [ ] **Implement CSS variables** for consistent image dimensions across breakpoints
+
+#### **Phase 2: Logo Component Synchronization**
+- [ ] **Sync navbar + team page logo** markup and styles
+- [ ] **Fix mobile logo sizing** with proper icon-to-text proportions
+- [ ] **Standardize logo component** across all pages
+
+#### **Phase 3: Content Cleanup & Layout Fixes**
+- [ ] **Remove redundant footnotes** from teams.html
+- [ ] **Restore missing hero section** for tablet view
+- [ ] **Fix image alignment** and text positioning
+- [ ] **Implement consistent container structure** across all views
+
+#### **Phase 4: Responsive Design Optimization**
+- [ ] **Mobile breakpoint fixes** for iPhone 13 and similar devices
+- [ ] **Tablet layout restoration** with proper hero section
+- [ ] **Cross-device consistency** between homepage and team page
+- [ ] **Performance optimization** for image loading and rendering
+
+### Implementation Strategy
+
+#### **CSS Architecture Updates**
+```css
+/* New CSS variables for consistent sizing */
+:root {
+  --founder-image-size: 240px;
+  --founder-image-size-mobile: 200px;
+  --founder-image-size-tablet: 220px;
+}
+
+/* Standardized image container */
+.founder-img {
+  width: var(--founder-image-size);
+  height: var(--founder-image-size);
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+```
+
+#### **Logo Component Standardization**
+```html
+<!-- Standardized logo markup -->
+<div class="logo-container">
+  <img src="assets/logos/luminary-logo.png" alt="Luminary Co." class="logo-icon">
+  <span class="logo-text">LUMINARY CO.</span>
+</div>
+```
+
+#### **Responsive Container Structure**
+```css
+/* Team hero section restoration */
+.team-hero {
+  text-align: center;
+  padding: clamp(40px, 6vw, 80px) 20px;
+}
+
+.team-hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+```
+
+### Testing & Validation Plan
+
+#### **Device Testing Matrix**
+- [ ] **Mobile**: iPhone 13, Samsung Galaxy, various Android devices
+- [ ] **Tablet**: iPad (portrait/landscape), Android tablets
+- [ ] **Desktop**: Chrome, Firefox, Safari, Edge
+- [ ] **Responsive**: All breakpoints (320px to 1920px+)
+
+#### **Functionality Testing**
+- [ ] **Image display**: All founder images properly cropped and centered
+- [ ] **Logo consistency**: Same appearance across all pages and devices
+- [ ] **Layout integrity**: Content properly aligned at all screen sizes
+- [ ] **Performance**: Image loading and rendering optimized
+
+### Success Criteria
+
+#### **Technical Success**
+- [ ] **Image containers**: All founder images display correctly with proper cropping
+- [ ] **Logo consistency**: Identical logo appearance across homepage and team page
+- [ ] **Responsive design**: Perfect functionality on mobile, tablet, and desktop
+- [ ] **Cross-page consistency**: Homepage and team page maintain visual harmony
+
+#### **User Experience Success**
+- [ ] **Professional appearance**: No more cropped faces or misaligned elements
+- [ ] **Mobile optimization**: Perfect experience on iPhone 13 and similar devices
+- [ ] **Tablet restoration**: Full content accessible on tablet devices
+- [ ] **Brand consistency**: Unified visual identity across all pages
+
+### Next Steps
+1. **Implement Phase 1**: CSS refactoring and image container fixes
+2. **Test on target devices**: Verify fixes on iPhone 13 and tablet devices
+3. **Cross-page validation**: Ensure consistency between homepage and team page
+4. **Performance testing**: Run Lighthouse audits after fixes
+5. **Documentation update**: Update development journal with completed fixes
+
+### Branch Strategy
+- **Current Branch**: `bugs-fixes-23aug-5pm` ✅
+- **Workflow**: Implement fixes, test thoroughly, commit with descriptive messages
+- **Merge Strategy**: Create PR after all fixes validated, merge to main after approval
+- **Deployment**: Automatic Vercel deployment after merge
+
+---

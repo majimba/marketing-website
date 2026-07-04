@@ -12,13 +12,21 @@ const methodStageCards = document.querySelectorAll("[data-method-stage-card]");
 const methodFlowItems = document.querySelectorAll("[data-method-flow]");
 let activeContactTrigger = null;
 
-const setHeaderState = () => {
-  if (!header) return;
-  header.dataset.scrolled = window.scrollY > 24 ? "true" : "false";
-};
+if (header) {
+  const headerSentinel = document.createElement("span");
+  headerSentinel.className = "header-sentinel";
+  headerSentinel.setAttribute("aria-hidden", "true");
+  document.body.prepend(headerSentinel);
 
-setHeaderState();
-window.addEventListener("scroll", setHeaderState, { passive: true });
+  const headerObserver = new IntersectionObserver(
+    ([entry]) => {
+      header.dataset.scrolled = entry.isIntersecting ? "false" : "true";
+    },
+    { rootMargin: "-24px 0px 0px 0px", threshold: 0 }
+  );
+
+  headerObserver.observe(headerSentinel);
+}
 
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
